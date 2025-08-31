@@ -1,39 +1,30 @@
 "use client";
 import React, { useState } from "react";
-import {
-  TrendingUp,
-  Target,
-  BarChart,
-  Menu,
-  X,
-  Star,
-  ArrowRight,
-  CheckCircle,
-} from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    phone: "",
-    service: "",
-    message: "",
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    service: '',
+    message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    setError("");
+    setError('');
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
+      const response = await fetch('/api/contact', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
@@ -41,33 +32,34 @@ const Contact = () => {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || "Something went wrong");
+        throw new Error(result.error || 'Something went wrong');
       }
 
       setIsSubmitted(true);
       setFormData({
-        name: "",
-        email: "",
-        company: "",
-        phone: "",
-        service: "",
-        message: "",
+        name: '',
+        email: '',
+        company: '',
+        phone: '',
+        service: '',
+        message: ''
       });
-
       setTimeout(() => setIsSubmitted(false), 5000);
     } catch (err) {
-      setError(err.message || "Failed to send message. Please try again.");
+      const errorMessage = err instanceof Error ? err.message : 'Failed to send message. Please try again.';
+      setError(errorMessage);
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
+
 
   if (isSubmitted) {
     return (
@@ -79,8 +71,8 @@ const Contact = () => {
               Thank You!
             </h3>
             <p className="text-gray-600">
-              We've received your message and will get back to you within 24
-              hours with a customized strategy proposal.
+              We&apos;ve received your message and will get back to you within
+              24 hours with a customized strategy proposal.
             </p>
           </div>
         </div>
@@ -101,7 +93,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="bg-white p-8 rounded-xl shadow-lg">
+        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-lg">
           {error && (
             <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
               {error}
@@ -183,14 +175,13 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder="Tell us about your business goals and what you're looking to achieve..."
+              placeholder="Tell us about your business goals and what you&apos;re looking to achieve..."
             />
           </div>
 
           <button
             type="submit"
             disabled={isLoading}
-            onClick={handleSubmit}
             className="w-full bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isLoading ? (
@@ -205,7 +196,7 @@ const Contact = () => {
               </>
             )}
           </button>
-        </div>
+        </form>
       </div>
     </section>
   );

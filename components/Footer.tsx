@@ -1,7 +1,12 @@
+"use client";
 import React, { useState } from 'react';
-import { TrendingUp, Target, BarChart, Menu, X, Star, ArrowRight, CheckCircle } from 'lucide-react';
+import { TrendingUp} from 'lucide-react';
 
 const Footer = () => {
+  const [year, setYear] = useState<number | null>(null);
+  React.useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,7 +55,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy;  {new Date().getFullYear()} GrowthLab. All rights reserved.</p>
+          <p>&copy;  {year ? year : ""} GrowthLab. All rights reserved.</p>
         </div>
       </div>
     </footer>

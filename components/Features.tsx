@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { TrendingUp, Target, BarChart, Menu, X, Star, ArrowRight, CheckCircle } from 'lucide-react';
+import React from 'react';
+import { TrendingUp, Target, BarChart } from 'lucide-react';
 const Features = () => {
   const features = [
     {

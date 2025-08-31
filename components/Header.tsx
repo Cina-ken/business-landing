@@ -1,15 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import {
-  TrendingUp,
-  Target,
-  BarChart,
-  Menu,
-  X,
-  Star,
-  ArrowRight,
-  CheckCircle,
-} from "lucide-react";
+  TrendingUp, Menu, X} from "lucide-react";
 import Link from "next/link";
 
 const Header = () => {

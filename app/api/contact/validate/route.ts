@@ -16,6 +16,7 @@ export async function PUT(request: NextRequest) {
     });
     
   } catch (error) {
+    console.error('Email validation failed:', error);
     return NextResponse.json({ valid: false, message: 'Validation error' });
   }
 }

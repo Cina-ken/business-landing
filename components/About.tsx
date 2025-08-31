@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -10,14 +11,17 @@ const About = () => {
               Growing Businesses Since 2019
             </h2>
             <p className="text-lg text-gray-600 mb-6">
-              We started with a simple mission: help businesses make better marketing decisions using data, not guesswork. 
-              Today, we've helped over 200+ companies achieve sustainable growth through strategic digital marketing.
+              We started with a simple mission: help businesses make better
+              marketing decisions using data, not guesswork. Today, we&apos;ve
+              helped over 200+ companies achieve sustainable growth through
+              strategic digital marketing.
             </p>
             <p className="text-lg text-gray-600 mb-8">
-              Our proven methodology combines market research, competitor analysis, and performance tracking 
-              to create campaigns that don't just look good – they deliver measurable ROI.
+              Our proven methodology combines market research, competitor
+              analysis, and performance tracking to create campaigns that
+              don&apos;t just look good – they deliver measurable ROI.
             </p>
-            
+
             <div className="grid grid-cols-3 gap-8 mb-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-600">200+</div>
@@ -33,14 +37,14 @@ const About = () => {
               </div>
             </div>
             <Link href="/#contact">
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
-              Learn More About Our Process
-            </button>
+              <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                Learn More About Our Process
+              </button>
             </Link>
           </div>
-          
+
           <div className="relative">
-            <img 
+            <Image
               src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               alt="Team collaboration"
               className="rounded-2xl shadow-xl"

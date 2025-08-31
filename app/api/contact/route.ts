@@ -1,3 +1,4 @@
+
 // app/api/contact/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -42,7 +43,7 @@ export async function POST(request: NextRequest) {
     console.log('New contact form submission:', {
       ...body,
       timestamp: new Date().toISOString(),
-      ip: request.ip || 'unknown'
+      userAgent: request.headers.get('user-agent') || 'unknown'
     });
 
     // Simulate processing delay (remove in production)

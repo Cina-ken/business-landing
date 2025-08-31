@@ -1,14 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import {
-  TrendingUp,
-  Target,
-  BarChart,
-  Menu,
-  X,
-  Star,
-  ArrowRight,
-  CheckCircle,
-} from "lucide-react";
+  TrendingUp, CheckCircle,} from "lucide-react";
 import Link from "next/link";
 import Image from 'next/image';
 
