@@ -10,6 +10,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import Link from "next/link";
+import Image from 'next/image';
 
 const Hero = () => {
   return (
@@ -54,7 +55,7 @@ const Hero = () => {
 
           <div className="relative">
             <div className="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden shadow-2xl">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
                 alt="Business Analytics Dashboard"
                 className="object-cover w-full h-full"
