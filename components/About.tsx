@@ -44,9 +44,11 @@ const About = () => {
           </div>
 
           <div className="relative">
-            <Image
+            <Image 
               src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               alt="Team collaboration"
+              width={800}
+              height={600}
               className="rounded-2xl shadow-xl"
             />
           </div>

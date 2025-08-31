@@ -59,10 +59,13 @@ const Testimonials = () => {
                 </blockquote>
               </blockquote>
               <div className="flex items-center">
-                <Image
+                 <Image 
                   src={testimonial.avatar}
                   alt={testimonial.name}
+                  width={48}
+                  height={48}
                   className="w-12 h-12 rounded-full mr-4"
+                  unoptimized
                 />
                 <div>
                   <div className="font-semibold text-gray-900">
